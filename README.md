@@ -1,6 +1,6 @@
 # nbt2yaml docker wrapper
 
-[nbt2yaml]() in docker with wrapper script. 
+[nbt2yaml](https://bitbucket.org/zzzeek/nbt2yaml) in docker with wrapper script. 
 
 ## Usage
 
