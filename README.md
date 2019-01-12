@@ -5,8 +5,12 @@
 ## Usage
 
 * `make install` 
-  * default behaivor: `make install --prefix=$HOME/.local/`
-  * puts the nbt2yaml.sh script in $HOME/.local/bin as `nbt2yaml`
+  * default behavior: `make install --prefix=$HOME/.local/`
+  * installs the `nbt2yaml.sh` in $HOME/.local/bin as three core tools of
+    nbt2yaml
+    * `nbt2yaml`
+    * `yaml2nbt`
+    * `nbtedit`
 
 ## Credits
 

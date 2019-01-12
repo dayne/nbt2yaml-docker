@@ -8,9 +8,13 @@ all: install
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	install -m 0755 nbt2yaml.sh $(DESTDIR)$(PREFIX)/bin/nbt2yaml
+	install -m 0755 nbt2yaml.sh $(DESTDIR)$(PREFIX)/bin/yaml2nbt
+	install -m 0755 nbt2yaml.sh $(DESTDIR)$(PREFIX)/bin/nbtedit
 
 uninstall:
 	@$(RM) $(DESTDIR)$(PREFIX)/bin/nbt2yaml
+	@$(RM) $(DESTDIR)$(PREFIX)/bin/yaml2mnt
+	@$(RM) $(DESTDIR)$(PREFIX)/bin/nbtedit
 	@docker rmi dayne/nbt2yaml:$(VERSION)
 	@docker rmi dayne/nbt2yaml:latest
 

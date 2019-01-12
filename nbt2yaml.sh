@@ -6,6 +6,19 @@
 
 PROGNAME="$(basename $0)"
 VERSION="latest"
+ENTRYPOINT="/usr/local/bin/nbt2yaml"
+
+case $PROGNAME in
+  "nbtedit")
+    ENTRYPOINT="/usr/local/bin/nbtedit"
+    ;;
+  "yaml2nbt")
+    ENTRYPOINT="/usr/local/bin/yaml2nbt"
+    ;;
+  "nbt2yaml")
+    ENTRYPOINT="/usr/local/bin/nbt2yaml"
+    ;;
+esac
 
 # Helper functions for guards
 error(){
@@ -26,6 +39,7 @@ docker ps > /dev/null 2>&1 || error 2 "No active docker running."
 # Set up mounted volumes, environment, and run our containerized command
 exec docker run \
   --interactive --tty --rm \
+  --entrypoint=$ENTRYPOINT \
   --volume "$PWD":/wd \
   --workdir /wd \
   "dayne/nbt2yaml:$VERSION" "$@"
